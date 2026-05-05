@@ -5,6 +5,7 @@ Week 3 (B Week) - Focus: Preliminary Planning and Research
 4-5-2026
 Set up repositry for the first time. Created Main.py files and did not much else.
 6-5-2026
+Created Main framework for class character
 8-5-2026
 
 Week 4 (A Week) - Focus: Identification of Classes, Objects, System Diagramming
