@@ -6,6 +6,9 @@ Week 3 (B Week) - Focus: Preliminary Planning and Research
 Set up repositry for the first time. Created Main.py files and did not much else.
 6-5-2026
 Created Main framework for class character
+Created basica testing battle loop, curetntly implementing global move lists.
+Terrible implementation of basic print statements. Game loop is established.
+Plan is to work on documentation for basically the rest of this week.
 8-5-2026
 
 Week 4 (A Week) - Focus: Identification of Classes, Objects, System Diagramming
