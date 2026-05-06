@@ -9,6 +9,9 @@ Created Main framework for class character
 Created basica testing battle loop, curetntly implementing global move lists.
 Terrible implementation of basic print statements. Game loop is established.
 Plan is to work on documentation for basically the rest of this week.
+I relearnt that coding in python is hard.
+I was limited by my mental will power, and was conflicted by the complexity of the code. 
+I PLAN to store data for moves, enemies, and the moves that enemies can use in seperate sheets instead of just in big lists in main.py
 8-5-2026
 
 Week 4 (A Week) - Focus: Identification of Classes, Objects, System Diagramming
