@@ -13,18 +13,28 @@ I relearnt that coding in python is hard.
 I was limited by my mental will power, and was conflicted by the complexity of the code. 
 I PLAN to store data for moves, enemies, and the moves that enemies can use in seperate sheets instead of just in big lists in main.py
 8-5-2026
+Finished up part of the documentation. Realised that everything is in a character parent class.
+Commited changes
+Showed mr clark work.
 
 Week 4 (A Week) - Focus: Identification of Classes, Objects, System Diagramming
 
 11-5-2026
+Began work on next section of documentation, began research on wumpus.
 13-5-2026
+Was not present
 14-5-2026
+Was not present
 15-5-2026
+Was not present
 
 Week 5 (B Week) - Focus: Programming, Asset Creation/Identification and Journaling
 
 18-5-2026
+Worked on documentation and did nothing else.
 20-5-2026
+Finished documentation up to success criteria.
+Began working on the development of the game. Made general battle loop. Will work on annoying level up system next.
 22-5-2026
 
 Week 6 (A Week) - Focus: Programming, Asset Creation/Identification and Journaling

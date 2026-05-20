@@ -1,13 +1,10 @@
-from random import random, randint, choice
-
-
-
+from random import random, randint
 
 class living:
     def __init__(self, name, health, attack, speed, moves=None):
         self.name = name
         self.health = health
-        self.mp = 100 #mana points
+        self.mp = 100 # mana points
         self.attack = attack
         self.speed = speed
         self.moves = moves if moves else []
@@ -23,11 +20,16 @@ class living:
         damage = int(self.attack * mult) + randint(-2, 5)
         target.take_damage(damage)
 
+    def heal(self, amount):
+        self.health += amount
+        print(f"{self.name} heals for {amount}! HP: {self.health}")
+
 all_moves = [
     ["Agi", True, 10, 1, 1.3, True, False, "Burn", 0.75],
     ["Zio", True, 20, 1, 1.25, True, False, "Stun", 0.25],
     ["Bufu", True, 30, 1, 1.5, True, False, "Freeze", 0.25],
-    ["Dia", False, 15, 1,  2, False, False, "Heal", 0.95] # Name, is_offensive, mp/hp cost, mp(1)/hp(2) damage_mult, hit all, effect, effect chance
+    ["Dia", False, 15, 1,  2, False, False, "Heal", 0.95] 
+    # Name, is_offensive, mp/hp cost, mp(1)/hp(2) damage_mult, heal/dmg, hit all, effect, effect chance
 ]
 
 def battle(player, enemy1, enemy2):
@@ -62,17 +64,21 @@ def battle(player, enemy1, enemy2):
                 continue
             player.mp -= player.moves[int(move_choice) - 1][2]
             move = player.moves[int(move_choice) - 1]
-            print(f"Attack 1. {enemy1.name}  2. {enemy2.name}")
-            target = input("Choose target: ")
-            if target == "1" and enemy1.is_alive():
+            if move[5] == False: #healing
                 print(f"{player.name} uses {move[0]}!")
-                player.deal_damage(enemy1, move[3])
-            elif target == "2" and enemy2.is_alive():
-                print(f"{player.name} uses {move[0]}!")
-                player.deal_damage(enemy2, move[3])
-            else:
-                print("Invalid target!")
-                continue
+                player.heal(int(player.attack * move[3]))
+            if move[5] == True: #offensive
+                print(f"Attack 1. {enemy1.name}  2. {enemy2.name}")
+                target = input("Choose target: ")
+                if target == "1" and enemy1.is_alive():
+                    print(f"{player.name} uses {move[0]}!")
+                    player.deal_damage(enemy1, move[3])
+                elif target == "2" and enemy2.is_alive():
+                    print(f"{player.name} uses {move[0]}!")
+                    player.deal_damage(enemy2, move[3])
+                else:
+                    print("Invalid target!")
+                    continue
         elif action == "3":
             print(f"{player.name} ran away!")
             return False
@@ -94,7 +100,7 @@ def battle(player, enemy1, enemy2):
 
 
 def main():
-    player = living("Hero", 100, 15, 10, [all_moves[0], all_moves[1]])
+    player = living("Hero", 100, 15, 10, [all_moves[0], all_moves[1], all_moves[2], all_moves[3]])
     enemy1 = living("Goblin", 60, 10, 8)
     enemy2 = living("Orc", 50, 12, 7)
     
